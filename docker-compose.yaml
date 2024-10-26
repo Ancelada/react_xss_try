@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  tander_front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react_xss_try
+    entrypoint: sh entrypoint.sh
+    working_dir: /home/node
+    volumes:
+      - .:/home/node
+    network_mode: host
+    ports:
+      - "2000:2000"
